@@ -13,4 +13,12 @@ public class InventoryTracker {
             return "HIGH: Stock is plentiful at " + currentStock + " units.";
         }
     }
+
+    public boolean alertLowStock() {
+        if (currentStock < LOW_STOCK_THRESHOLD) {
+            System.err.println("[ALERT] Critical low stock! Current units: " + currentStock);
+            return true;
+        }
+        return false;
+    }
 }
